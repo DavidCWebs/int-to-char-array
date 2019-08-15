@@ -30,4 +30,9 @@ int main()
 			<< static_cast<unsigned int>(el & 0xff) << " ";
 	}
 	std::cout << '\n';
+
+	// Loop through bytes as stored in memory
+	char* tracer = (char*)&in;
+	for (size_t i = 0; i < BYTES_PER_INT; i++)
+		std::cout << +(*(tracer++)) << '\n';
 }
